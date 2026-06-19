@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat bot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/images/favicon.png">
+</head>
+
+<body>
+    <div class="WS">
+        <h2> version alpha </h2>
+
+        <div class="page-wrapper">
+            <header class="page-header">
+                <h1>Chat bot</h1>
+                <p>Posez une question et le bot répondra comme un assistant intelligent.</p>
+            </header>
+
+            <div class="content-grid">
+                <aside id="saved-questions-dropdown" class="sidebar dropdown">
+                    <div class="sidebar-header">
+                        <div>
+                            <h2>Questions sauvegardées</h2>
+                            <p>Reste visible même après fermeture et réouverture de la page.</p>
+                        </div>
+                        <button id="reset-history" class="bouton secondary" type="button">Effacer l'historique</button>
+                    </div>
+                    <div id="question-list" class="question-list"></div>
+                </aside>
+
+                <section class="chat-container">
+                    <div class="chat-header">
+                        <div>
+                            <h2>Assistant</h2>
+                            <p>Questionnez l'IA en français ou en anglais.</p>
+                        </div>
+                        <div class="chat-actions">
+                            <button id="settings-button" class="bouton secondary" type="button">Paramètres</button>
+                            <button id="toggle-questions" class="bouton secondary" type="button">Voir les questions</button>
+                        </div>
+                    </div>
+                    <div id="settings-panel" class="settings-panel" aria-hidden="true">
+                        <h3>Paramètres</h3>
+                        <p>Activez le mode sombre dans ce menu.</p>
+                        <button id="theme-toggle" class="bouton secondary" type="button">Activer le mode sombre</button>
+                    </div>
+
+                    <div id="chat-messages" class="chat-messages"></div>
+
+                    <div id="loading-indicator" class="loading-indicator" style="display: none;">
+                        En attente de réponse
+                        <div class="dot-1">.</div>
+                        <div class="dot-2">.</div>
+                        <div class="dot-3">.</div> 
+                    </div>
+
+                    <form id="chat-form" class="chat-form">
+                        <input type="text" id="user-input" placeholder="Écrivez votre question ici..." autocomplete="off">
+                        <button class="bouton" type="submit">Envoyer</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript/api.js" type="module"></script>
+</body>
+
+</html>
